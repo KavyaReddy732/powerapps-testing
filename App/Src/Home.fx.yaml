@@ -1,0 +1,131 @@
+Home As screen:
+    Fill: =
+
+    "'Manufacture gallery' As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver4.0'":
+        Default: =First(Manufacturers)
+        Height: =661
+        Items: =Manufacturers
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,LightBlue)
+        TemplatePadding: =4
+        TemplateSize: =65
+        Width: =309
+        Y: =107
+        ZIndex: =2
+
+        Image8 As image:
+            Height: =65
+            Image: =ThisItem.Logo
+            OnSelect: =Select(Parent)
+            Width: =296
+            ZIndex: =1
+
+    "'Device gallery' As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Height: =522
+        Items: =Filter(Devices,ManufacturerID='Manufacture gallery'.Selected.ManufacturerID)
+        TemplatePadding: =0
+        TemplateSize: =249
+        Width: =1030
+        X: =334
+        Y: =125
+        ZIndex: =4
+
+        Image6 As image:
+            Height: =283
+            Image: =ThisItem.Photo
+            OnSelect: =Select(Parent)
+            Width: =212
+            Y: =41
+            ZIndex: =1
+
+        "'Device name' As label":
+            Height: =76
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Device Name'
+            Width: =213
+            X: =14
+            Y: =324
+            ZIndex: =2
+
+        series As label:
+            Color: =If(ThisItem.Price>1000,OrangeRed,Gray)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                =Text(ThisItem.Price,"DKK ##,###.00")
+            VerticalAlign: =VerticalAlign.Top
+            Width: ='Device name'.Width
+            X: ='Device name'.X
+            Y: ='Device name'.Y + 'Device name'.Height + 8
+            ZIndex: =3
+
+        Checkbox1 As checkbox:
+            Default: =ThisItem in CompareList
+            Height: =60
+            OnCheck: =Collect(CompareList,ThisItem)
+            OnSelect: =Select(Parent)
+            OnUncheck: =Remove(CompareList,ThisItem)
+            Size: =16
+            Text: ="Compare"
+            Width: =185
+            X: =13
+            Y: =440
+            ZIndex: =4
+
+    Button1 As button:
+        DisplayMode: =If(CountRows(CompareList) > 0, DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =60
+        OnSelect: =Navigate('Compare Screen', ScreenTransition.None)
+        Text: ="Compare " & CountRows(CompareList) & " item(s)"
+        Width: =232
+        X: =1078
+        Y: =672
+        ZIndex: =7
+
+    Button1_1 As button:
+        DisplayMode: =If(CountRows(CompareList) > 0, DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =60
+        OnSelect: =Clear(CompareList)
+        Text: ="Clear Selection"
+        Width: =232
+        X: =334
+        Y: =672
+        ZIndex: =8
+
+    Header As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Label1 As label:
+            Align: =Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 121, 187, 1)
+            FontWeight: =Bold
+            Height: =107
+            Size: =28
+            Text: ="Device Ordering App"
+            Width: =1364
+            ZIndex: =5
+
+        Label2 As label:
+            Align: =Right
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =107
+            PaddingRight: =20
+            Size: =18
+            Text: ="Hello, " & User().FullName
+            Width: =390
+            X: =974
+            ZIndex: =6
+

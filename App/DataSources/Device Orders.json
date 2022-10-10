@@ -1,0 +1,130 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crc19_deviceorders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crc19_deviceorder",
+    "MaxGetRowsCount": 500,
+    "Name": "Device Orders",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crc19_approvalstatus": "Approval Status",
+      "crc19_approvedate": "Approve Date",
+      "crc19_approver": "Approver",
+      "crc19_comments": "Comments",
+      "crc19_departmentcontribution": "Department Contribution",
+      "crc19_departmentcontribution_base": "Department Contribution (Base)",
+      "crc19_devicename": "Device Name",
+      "crc19_deviceorder_AsyncOperations": "System Jobs",
+      "crc19_deviceorder_BulkDeleteFailures": "Bulk Delete Failures",
+      "crc19_deviceorder_DuplicateBaseRecord": "Duplicate Records (crc19_deviceorder_DuplicateBaseRecord)",
+      "crc19_deviceorder_DuplicateMatchingRecord": "Duplicate Records (crc19_deviceorder_DuplicateMatchingRecord)",
+      "crc19_deviceorder_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crc19_deviceorder_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crc19_deviceorder_ProcessSession": "Process Sessions",
+      "crc19_deviceorder_SyncErrors": "Sync Errors",
+      "crc19_deviceorderid": "Device Order",
+      "crc19_estimatedshipdate": "Estimated ship Date",
+      "crc19_price": "Price",
+      "crc19_price_base": "Price (Base)",
+      "crc19_requestdate": "Request Date",
+      "crc19_requestedby": "RequestedBy",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Device Orders",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Device Orders (Views)",
+    "Name": "_crc19_deviceorder_views",
+    "RelatedEntityName": "Device Orders",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0dd2467e-66d6-4238-81e3-3dcf48c67b68": "Device Order Lookup View",
+      "440f665b-9364-4fa3-9a14-49d56b10022f": "Inactive Device Orders",
+      "dd37e8e0-8c84-4c4f-90e9-cf6b3d7d3888": "Device Order Associated View",
+      "e5a5fd6c-7c41-43c5-802c-bce63a2c616b": "Active Device Orders",
+      "eab94733-5d1f-4702-bd3f-cc8c3dbef6ef": "Device Order Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Approval Status (Device Orders)",
+    "Name": "crc19_deviceorder_crc19_approvalstatus",
+    "OptionSetInfoNameMapping": {
+      "0": "Reject",
+      "1": "Approve"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crc19_approvalstatus",
+        "OptionSetReferenceEntityName": "Device Orders"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crc19_approvalstatus",
+    "RelatedEntityName": "Device Orders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Device Orders)",
+    "Name": "crc19_deviceorder_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Device Orders"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Device Orders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Device Orders)",
+    "Name": "crc19_deviceorder_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Device Orders"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Device Orders",
+    "Type": "OptionSetInfo"
+  }
+]
