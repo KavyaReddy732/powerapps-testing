@@ -26,8 +26,8 @@ Home As screen:
         TemplatePadding: =0
         TemplateSize: =249
         Width: =1030
-        X: =334
-        Y: =125
+        X: =336
+        Y: =107
         ZIndex: =4
 
         Image6 As image:
@@ -92,10 +92,10 @@ Home As screen:
 
     Button1_1 As button:
         DisplayMode: =If(CountRows(CompareList) > 0, DisplayMode.Edit, DisplayMode.Disabled)
-        Height: =60
+        Height: =96
         OnSelect: =Clear(CompareList)
         Text: ="Clear Selection"
-        Width: =232
+        Width: =428
         X: =334
         Y: =672
         ZIndex: =8
